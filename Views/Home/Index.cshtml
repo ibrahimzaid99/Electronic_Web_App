@@ -1,0 +1,181 @@
+﻿
+@section slider
+    {
+    <div id="carouselExampleDark" class="carousel  slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="10000">
+                <img style="object-fit:cover; height:500px;" src="https://images.nvidia.com/aem-dam/Solutions/geforce/home/1478432-gf-web-dmo-wtb-mfg-2560x580-d-v1@2x.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+    
+                                 <b id="bttn">Live The Future Now</b>
+                    <p id="btttn">With Our High Performance Devices</p>
+                    <a asp-controller="Products" asp-action="Index" class="btn btn-success text-center" id="bttttn">Shop Now</a>
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+                <img style="object-fit:cover; height:500px;" src="https://images.samsung.com/is/image/samsung/assets/us/2307/pcd/mobile/07212023/PFS-FT03-KV-S23-Series-v2_PC.jpeg?$1440_N_JPG$" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <b id="bttn">Galaxy S23</b>
+                    <p id="btttttn">
+                        Share the epic with our best cameras and fastest
+                        mobile processor.
+                    </p>
+                    <a asp-controller="Products" asp-action="Index" class="btn btn-success text-center" id="bttttn">Shop Now</a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img style="object-fit:cover; height:500px;" src="https://images.samsung.com/is/image/samsung/assets/us/tvs/03162023/TVPCD-Qseriesbanner-Desktop.jpg?$FB_TYPE_A_JPG$" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <b id="bttttttn">Unheard of performance</b>
+                    <p id="btttttttn">
+                        Introducing the new Q990C, our greatest-of-all-time soundbar, delivering level audio synchronized to your TV's sound.
+                    </p>
+                    <a asp-controller="Products" asp-action="Index" class="btn btn-success text-center" id="bttttttttn">Shop Now</a>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev " type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon bg-success rounded" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next " type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+            <span class="carousel-control-next-icon bg-success rounded" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+}
+
+
+
+<div class="container ">
+    <div class="row">
+        <div class="col-md-8">
+            <div>
+                <img class="p-5" src="/Images/Products_Images/6.jpg" style="width:400px;height:400px" />
+            </div>
+            <p class="h3 fs-2">Welcome To Shopping In FreeComp</p>
+            <div class="text-secondary mb-5 fs-5">
+                FreeComp Computer is a company specializing in retail and wholesale
+                electronics including laptops, computers and accessories.<br />
+                FreeComp Computer has been established since 2005 in Egypt. It is
+                engaged in wholesale sale, Sigma as a first stage and retailing for more
+                than 14 years in Egypt. Toby has 4 branches in the largest and most
+                famous commercial centers in Egypt
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="m-4 h5">Brands We Deal With</div>
+            <ul style="list-style:none">
+                <li>
+                    <img class="brands p-1" src="/Images/Prands-Images/acer.jpg" alt="" style="width:120px;height:120px" />
+                    <img class="brands p-1" src="/Images/Prands-Images/apple.jpg" alt="" style="width:120px;height:120px" />
+                    <img class="brands p-1" src="/Images/Prands-Images/dell.jpg" alt="" style="width:120px;height:120px" />
+                    <img class="brands p-1" src="/Images/Prands-Images/dragon.jpg" alt="" style="width:120px;height:120px" />
+                    <img class="brands p-1" src="/Images/Prands-Images/legion.jpg" alt="" style="width:120px;height:120px" />
+                    <img class="brands p-1" src="/Images/Prands-Images/toshipa.jpg" alt="" style="width:120px;height:120px" />
+                </li>
+            </ul>
+            <div class="m-4 h5">Why Choose Us</div>
+            <ul class="text-secondary fs-5">
+                <li class="m-3">- Shipping & Returns</li>
+                <li class="m-3">- Secure Shopping</li>
+                <li class="m-3">- ONLINE SUPPORT</li>
+                <li class="m-3">- ORDER PROTECTION</li>
+                <li class="m-3">- PROMOTION GIFT</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
+<style>
+
+
+    #bttn {
+        width: 600px;
+        height: auto;
+        position: absolute;
+        left: 0;
+        bottom: 300px;
+        margin-right: 20px;
+        padding: 0px;
+        font-size: 60px;
+    }
+
+    #btttn {
+        width: 400px;
+        height: auto;
+        position: absolute;
+        left: 95px;
+        bottom: 200px;
+        margin-right: 20px;
+        padding: 0px;
+        font-size: 30px;
+    }
+
+    #bttttn {
+        width: 220px;
+        height: auto;
+        position: absolute;
+        left: 190px;
+        bottom: 130px;
+        margin-right: 20px;
+        padding: 5px;
+        font-size: 30px;
+    }
+
+    #btttttn {
+        width: 300px;
+        height: auto;
+        position: absolute;
+        left: 150px;
+        bottom: 190px;
+        margin-right: 20px;
+        padding: 5px;
+        font-size: 20px;
+    }
+
+    #bttttttn {
+        width: 800px;
+        height: auto;
+        position: absolute;
+        left: 0;
+        bottom: 300px;
+        margin-right: 20px;
+        padding: 0px;
+        font-size: 60px;
+    }
+
+    #btttttttn {
+        width: 600px;
+        height: auto;
+        position: absolute;
+        left: 125px;
+        bottom: 210px;
+        margin-right: 20px;
+        padding: 5px;
+        font-size: 20px;
+    }
+
+    #bttttttttn {
+        width: 220px;
+        height: auto;
+        position: absolute;
+        left: 325px;
+        bottom: 150px;
+        margin-right: 20px;
+        padding: 5px;
+        font-size: 30px;
+    }
+
+    a {
+        font-size: 20px;
+    }
+
+</style>

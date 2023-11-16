@@ -1,0 +1,51 @@
+﻿
+
+@model Products
+@*
+*@<form method="post" asp-action="SaveEdit" asp-controller="Products" asp-route-id="@Model.Id">
+    <div>
+        <label asp-for="Title">Product Name</label>
+        <input class="form-control" asp-for="Title" value="@Model.Title" />
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="Description"></label>
+        <input class="form-control" asp-for="Description" value="@Model.Description" />
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="Price"></label>
+        <input class="form-control" asp-for="Price" value="@Model.Price" />
+        <span asp-validation-for="Price" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="ImgUrl"></label>
+        <input class="form-control" asp-for="ImgUrl" value="@Model.ImgUrl" />
+        <span asp-validation-for="ImgUrl" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="Rating"></label>
+        <input class="form-control" asp-for="Rating" value="@Model.Rating" />
+        <span asp-validation-for="Rating" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="Category_id"> Category</label>
+        <select class="form-control" asp-for="Category_id">
+            @foreach (Categories category in ViewBag.CategoriesList)
+            {
+                <option value="@category.Id">@category.Name</option>
+            }
+        </select>
+    </div>
+    <input type="submit" class="btn btn-success mt-2" value="Save Changes" />
+</form>
+@section Scripts{
+<a asp-action="Index" class="btn btn-primary mt-3"> Back To All Products</a>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}

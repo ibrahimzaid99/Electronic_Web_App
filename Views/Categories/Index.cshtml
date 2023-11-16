@@ -1,0 +1,227 @@
+﻿
+@model List<Categories>
+<div class="articles" id="articles">
+    @if (User.IsInRole("Admin"))
+    {
+        <a asp-action="AddNewCategory" asp-controller="Categories" class="btn btn-success" >Add New Category</a>
+    }
+    <div class="d-flex justify-content-center align-items-center fs-3 mb-5 text-success">All Categories</div>
+    <div class="container">
+
+        @foreach (var category in Model)
+        {
+            <div class="box">
+                <img src="~/Images/Category_Images/@category.ImgUrl">
+                <div class="content">
+                    <div class="info">
+                        <h3 class="text-success" >@category.Name</h3>
+                    </div>
+                    @*<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit</p>*@
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <a href="/Categories/Edit/@category.Id" class="btn btn-warning mb-2 ">Edit </a>
+                        <a href=" /Categories/Delete/@category.Id" class="btn btn-danger mb-2 ">Delete </a>
+                        <a class="btn btn-success ">Add Products In @category.Name </a>
+                    }
+                </div>
+                <div class="info bg-dark">
+                    <a asp-action="Category" asp-controller="Products" asp-route-id="@category.Name" style="text-decoration:none ;" class="text-center text-light">Show All @category.Name</a>
+                    <i class="bi bi-box-arrow-right"></i>
+                    <svg class=" text-light" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z" />
+                        <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z" />
+                    </svg>
+                </div>
+            </div>
+
+        }
+    </div>
+</div>
+<style>
+    .articles {
+        padding-top: var(--main-padding-top);
+        padding-bottom: var(--main-padding-bottom);
+        position: relative;
+    }
+
+        .articles .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .articles .box {
+            box-shadow: 0 2px 15px rgb(0 0 0 / 10%);
+            background-color: white;
+            border-radius: 6px;
+            overflow: hidden;
+            transition: transform var(--main-transition), box-shadow var(--main-transition);
+        }
+
+            .articles .box:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 2px 15px rgb(0 0 0 / 20%);
+            }
+
+            .articles .box img {
+                width: 300px;
+                height:300px;
+                max-width: 100%;
+            }
+
+            .articles .box .content {
+                padding: 20px;
+            }
+
+                .articles .box .content h3 {
+                    margin: 0;
+                }
+
+                .articles .box .content p {
+                    margin: 10px 0 0;
+                    line-height: 1.5;
+                    color: #777;
+                }
+
+            .articles .box .info {
+                padding: 20px;
+                border-top: 1px solid #e6e6e7;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+                .articles .box .info a {
+                    color: var(--main-color);
+                    font-weight: bold;
+                }
+
+                .articles .box .info svg {
+                    color: var(--main-color);
+                }
+
+            .articles .box:hover .info svg {
+                animation: moving-arrow 0.6s linear infinite;
+            }
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*<div class=" container">
+        <div class="row">
+        @foreach (var category in Model)
+        {
+        <div class="col">
+        <div class="card">
+        <div class="card-details">
+        <p class="text-title"><img src="~/Images/Category_Images/@category.ImgUrl" style="width:180px;hight:234px" /></p>
+        <p class="text-body">Here are the details of the card</p>
+        </div>
+        <button class="card-button">@category.Name</button>
+        </div>
+        </div>
+        <style>
+
+        .card {
+        width: 190px;
+        height: 254px;
+        border-radius: 20px;
+        background: #f5f5f5;
+        position: relative;
+        padding: 1.8rem;
+        border: 2px solid #c3c6ce;
+        transition: 0.5s ease-out;
+        overflow: visible;
+        }
+
+        .card-details {
+        color: black;
+        height: 100%;
+        gap: .5em;
+        display: grid;
+        place-content: center;
+        }
+
+        .card-button {
+        transform: translate(-50%, 125%);
+        width: 60%;
+        border-radius: 1rem;
+        border: none;
+        background-color: #008bf8;
+        color: #fff;
+        font-size: 1rem;
+        padding: .5rem 1rem;
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        opacity: 0;
+        transition: 0.3s ease-out;
+        }
+
+        .text-body {
+        color: rgb(134, 134, 134);
+        }
+
+        /*Text*/
+        .text-title {
+        font-size: 1.5em;
+        font-weight: bold;
+        }
+
+        /*Hover*/
+        .card:hover {
+        border-color: #008bf8;
+        box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+        }
+
+        .card:hover .card-button {
+        transform: translate(-50%, 50%);
+        opacity: 1;
+        }
+
+        </style>
+        }
+        </div>
+        </div>
+        *@
+
+

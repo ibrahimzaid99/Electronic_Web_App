@@ -1,0 +1,54 @@
+﻿@model Products
+
+<form method="post" asp-action="AddNewProduct">
+    <div>
+        <label asp-for="Title" class="m-2">Product Title</label>
+        <input class="form-control" asp-for="Title" />
+       <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="Price" class="m-2">Product Price</label>
+        <input class="form-control" asp-for="Price" />
+        <span asp-validation-for="Price" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="Description" class="m-2">Product Description</label>
+        <input class="form-control" asp-for="Description" />
+       <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="ImgUrl" class="m-2">Product Image</label>
+        <input  class="form-control" asp-for="ImgUrl" />
+        <span asp-validation-for="ImgUrl" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="Rating" class="m-2">Product Rating</label>
+        <input class="form-control" asp-for="Rating" />
+        <span asp-validation-for="Rating" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="Category_id"> Category</label>
+        <select class="form-control" asp-for="Category_id">
+            @foreach (Categories Category in ViewBag.CategoriesList)
+            {
+                <option value="@Category.Id">@Category.Name</option>
+            }
+        </select>
+    </div>
+
+    
+
+    <input type="submit" class="btn btn-success mt-3" value="Add New Product" />
+</form>
+
+<a asp-action="Index" class="btn btn-primary mt-3">Back To All Products</a>
+@section Scripts{
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}

@@ -1,0 +1,25 @@
+﻿@model Categories
+
+<form method="post" asp-action="AddNewCategory">
+    <div>
+        <label asp-for="Name" class="m-2">Category Name</label>
+        <input class="form-control" asp-for="Name" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="ImgUrl" class="m-2">Category Image</label>
+        <input class="form-control" asp-for="ImgUrl" />
+        <span asp-validation-for="ImgUrl" class="text-danger" ></span>
+    </div>
+
+    <input type="submit" class="btn btn-success mt-3" value="Add New Category" />
+</form>
+
+<a asp-action="Index" class="btn btn-primary mt-3">Back To All Categories</a>
+
+@section Scripts{
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}
